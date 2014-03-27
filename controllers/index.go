@@ -13,6 +13,9 @@ func init() {
 
 var indexTemplate = template.Must(template.New("index.html").ParseFiles(
 	"views/index.html",
+	"views/layout/bootstrap_base_head.html",
+	"views/layout/navbar.html",
+	"views/layout/bootstrap_base_foot.html",
 ))
 
 type IndexPageVariables struct {
