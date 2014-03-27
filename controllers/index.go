@@ -3,6 +3,9 @@ package controllers
 import (
 	"html/template"
 	"net/http"
+
+	"appengine"
+	"appengine/user"
 )
 
 func init() {
@@ -11,6 +14,7 @@ func init() {
 
 type GlobalVariables struct {
 	Title string
+	User  *user.User
 }
 
 // START FUNCTIONS FOR INDEX PAGE
@@ -27,9 +31,11 @@ type IndexPageVariables struct {
 }
 
 func indexPage(w http.ResponseWriter, r *http.Request) {
+	c := appengine.NewContext(r)
 	page_variables := IndexPageVariables{}
 
 	page_variables.Global.Title = "Simply Ninja"
+	page_variables.Global.User = user.Current(c)
 
 	if err := indexTemplate.Execute(w, page_variables); err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
