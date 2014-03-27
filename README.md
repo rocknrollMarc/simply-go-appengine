@@ -7,4 +7,4 @@ A template for use during CTO Hack Night to see how different components of a Go
 
 Usage
 -----
-Follow the tags to see the different stages. Clone it into your own repo and modify app.yaml accordingly to use it yourself!
+Follow the tags to see the different stages. Clone it into your own repo and modify app.yaml accordingly to use
