@@ -9,6 +9,10 @@ func init() {
 	http.HandleFunc("/", indexPage)
 }
 
+type GlobalVariables struct {
+	Title string
+}
+
 // START FUNCTIONS FOR INDEX PAGE
 
 var indexTemplate = template.Must(template.New("index.html").ParseFiles(
@@ -19,10 +23,15 @@ var indexTemplate = template.Must(template.New("index.html").ParseFiles(
 ))
 
 type IndexPageVariables struct {
+	Global GlobalVariables
 }
 
 func indexPage(w http.ResponseWriter, r *http.Request) {
-	if err := indexTemplate.Execute(w, IndexPageVariables{}); err != nil {
+	page_variables := IndexPageVariables{}
+
+	page_variables.Global.Title = "Simply Ninja"
+
+	if err := indexTemplate.Execute(w, page_variables); err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 	}
 }
