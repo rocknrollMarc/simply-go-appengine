@@ -7,7 +7,7 @@ A template for use during CTO Hack Night to see how different components of a Go
 
 Usage
 -----
-Follow the tags to see the different stages. Clone it into your own repo and modify app.yaml accordingly to use.
+Follow the tags to see the different stages. Clone it into your own repo and modify app.yaml and import paths accordingly to use.
 
 1. [Initial Revision](https://github.com/simplymeasured/simply-go-appengine/tree/00-HelloWorld) - Just two files to make a Go app.
 2. [Add Templates](https://github.com/simplymeasured/simply-go-appengine/tree/01-AddTemplate) - Use HTML templates instead of inline code.
